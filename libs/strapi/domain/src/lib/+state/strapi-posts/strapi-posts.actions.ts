@@ -2,32 +2,36 @@ import { createAction, props } from '@ngrx/store';
 import { Update } from '@ngrx/entity';
 import { PostListResponseDataItem } from './model/postListResponseDataItem';
 
-export const loadStrapiPostss = createAction(
-    '[PostListResponseDataItem/API] Load StrapiPostss',
+export const initStrapiEffect = createAction(
+    '[PostListResponseDataItem/API] Init Strapi Effect'
+);
+
+export const loadStrapiPosts = createAction(
+    '[PostListResponseDataItem/API] Load PostListResponseDataItems',
     props<{ strapiPosts: PostListResponseDataItem[] }>()
 );
 
-export const addStrapiPosts = createAction(
+export const addStrapiPost = createAction(
     '[PostListResponseDataItem/API] Add PostListResponseDataItem',
     props<{
         strapiPost: PostListResponseDataItem;
     }>()
 );
 
-export const upsertStrapiPosts = createAction(
+export const upsertStrapiPost = createAction(
     '[PostListResponseDataItem/API] Upsert PostListResponseDataItem',
     props<{
         strapiPost: PostListResponseDataItem;
     }>()
 );
 
-export const addStrapiPostss = createAction(
-    '[PostListResponseDataItem/API] Add StrapiPostss',
+export const addStrapiPosts = createAction(
+    '[PostListResponseDataItem/API] Add PostListResponseDataItems',
     props<{ strapiPosts: PostListResponseDataItem[] }>()
 );
 
-export const upsertStrapiPostss = createAction(
-    '[PostListResponseDataItem/API] Upsert StrapiPostss',
+export const upsertStrapiPosts = createAction(
+    '[PostListResponseDataItem/API] Upsert PostListResponseDataItema',
     props<{ strapiPosts: PostListResponseDataItem[] }>()
 );
 
@@ -39,20 +43,20 @@ export const updateStrapiPost = createAction(
 );
 
 export const updateStrapiPosts = createAction(
-    '[PostListResponseDataItem/API] Update StrapiPostss',
+    '[PostListResponseDataItem/API] Update PostListResponseDataItems',
     props<{ strapiPosts: Update<PostListResponseDataItem>[] }>()
 );
 
-export const deleteStrapiPosts = createAction(
+export const deleteStrapiPost = createAction(
     '[PostListResponseDataItem/API] Delete PostListResponseDataItem',
     props<{ id: string }>()
 );
 
-export const deleteStrapiPostss = createAction(
-    '[PostListResponseDataItem/API] Delete StrapiPostss',
+export const deleteStrapiPosts = createAction(
+    '[PostListResponseDataItem/API] Delete PostListResponseDataItems',
     props<{ ids: string[] }>()
 );
 
 export const clearStrapiPosts = createAction(
-    '[PostListResponseDataItem/API] Clear StrapiPostss'
+    '[PostListResponseDataItem/API] Clear PostListResponseDataItems'
 );

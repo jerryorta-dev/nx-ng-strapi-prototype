@@ -1,22 +1,35 @@
 import { Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { Actions, createEffect, ofType, OnInitEffects } from '@ngrx/effects';
+import { Action } from '@ngrx/store';
 
-import { concatMap } from 'rxjs/operators';
-import { Observable, EMPTY } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
+import { PostListResponse } from './model/postListResponse';
 import * as StrapiPostsActions from './strapi-posts.actions';
+import { StrapiPostsService } from './strapi-posts.service';
 
 @Injectable()
-export class StrapiPostsEffects {
+export class StrapiPostsEffects implements OnInitEffects {
+    loadStrapiPosts$ = createEffect(() => {
+        return this.actions$.pipe(
+            ofType(StrapiPostsActions.initStrapiEffect),
+            switchMap(() =>
+                this.apiService.getPosts().pipe(
+                    map((response: PostListResponse) =>
+                        StrapiPostsActions.upsertStrapiPosts({
+                            strapiPosts: response.data ? response.data : [],
+                        })
+                    )
+                )
+            )
+        );
+    });
 
+    constructor(
+        private actions$: Actions,
+        private apiService: StrapiPostsService
+    ) {}
 
-  loadStrapiPostss$ = createEffect(() => {
-    return this.actions$.pipe( 
-
-      ofType(StrapiPostsActions.loadStrapiPostss),
-      /** An EMPTY observable only emits completion. Replace with your own observable API request */
-      concatMap(() => EMPTY as Observable<{ type: string }>)
-    );
-  });
-
-  constructor(private actions$: Actions) {}
+    ngrxOnInitEffects(): Action {
+        return StrapiPostsActions.initStrapiEffect();
+    }
 }

@@ -16,16 +16,16 @@ export const initialStrapiState: StrapiPostState = adapter.getInitialState({
 
 export const reducer = createReducer(
     initialStrapiState,
-    on(StrapiPostsActions.addStrapiPosts, (state, action) =>
+    on(StrapiPostsActions.addStrapiPost, (state, action) =>
         adapter.addOne(action.strapiPost, state)
     ),
-    on(StrapiPostsActions.upsertStrapiPosts, (state, action) =>
+    on(StrapiPostsActions.upsertStrapiPost, (state, action) =>
         adapter.upsertOne(action.strapiPost, state)
     ),
-    on(StrapiPostsActions.addStrapiPostss, (state, action) =>
+    on(StrapiPostsActions.addStrapiPosts, (state, action) =>
         adapter.addMany(action.strapiPosts, state)
     ),
-    on(StrapiPostsActions.upsertStrapiPostss, (state, action) =>
+    on(StrapiPostsActions.upsertStrapiPosts, (state, action) =>
         adapter.upsertMany(action.strapiPosts, state)
     ),
     on(StrapiPostsActions.updateStrapiPost, (state, action) =>
@@ -34,13 +34,13 @@ export const reducer = createReducer(
     on(StrapiPostsActions.updateStrapiPosts, (state, action) =>
         adapter.updateMany(action.strapiPosts, state)
     ),
-    on(StrapiPostsActions.deleteStrapiPosts, (state, action) =>
+    on(StrapiPostsActions.deleteStrapiPost, (state, action) =>
         adapter.removeOne(action.id, state)
     ),
-    on(StrapiPostsActions.deleteStrapiPostss, (state, action) =>
+    on(StrapiPostsActions.deleteStrapiPosts, (state, action) =>
         adapter.removeMany(action.ids, state)
     ),
-    on(StrapiPostsActions.loadStrapiPostss, (state, action) =>
+    on(StrapiPostsActions.loadStrapiPosts, (state, action) =>
         adapter.setAll(action.strapiPosts, state)
     ),
     on(StrapiPostsActions.clearStrapiPosts, (state) => adapter.removeAll(state))

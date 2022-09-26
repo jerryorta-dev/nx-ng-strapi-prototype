@@ -11,7 +11,7 @@
  */
 import { PostListResponseDataItemAttributes } from './postListResponseDataItemAttributes';
 
-export interface PostListResponseDataItem { 
-    id?: string;
+export interface PostListResponseDataItem {
+    id: string;
     attributes?: PostListResponseDataItemAttributes;
 }
