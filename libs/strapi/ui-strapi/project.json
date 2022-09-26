@@ -1,14 +1,14 @@
 {
     "$schema": "../../../node_modules/nx/schemas/project-schema.json",
     "projectType": "library",
-    "sourceRoot": "libs/any-shared/secrets/src",
-    "prefix": "nx-ng-strapi-prototype",
+    "sourceRoot": "libs/strapi/ui-strapi/src",
+    "prefix": "strapi",
     "targets": {
         "test": {
             "executor": "@nrwl/jest:jest",
-            "outputs": ["coverage/libs/any-shared/secrets"],
+            "outputs": ["coverage/libs/strapi/ui-strapi"],
             "options": {
-                "jestConfig": "libs/any-shared/secrets/jest.config.ts",
+                "jestConfig": "libs/strapi/ui-strapi/jest.config.ts",
                 "passWithNoTests": true
             }
         },
@@ -16,11 +16,11 @@
             "executor": "@nrwl/linter:eslint",
             "options": {
                 "lintFilePatterns": [
-                    "libs/any-shared/secrets/**/*.ts",
-                    "libs/any-shared/secrets/**/*.html"
+                    "libs/strapi/ui-strapi/**/*.ts",
+                    "libs/strapi/ui-strapi/**/*.html"
                 ]
             }
         }
     },
-    "tags": []
+    "tags": ["domain:strapi", "type:ui"]
 }
