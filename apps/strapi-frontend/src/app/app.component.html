@@ -1,3 +1,17 @@
 <div style="text-align: center">
-    <h1>Welcome to strapi-frontend!</h1>
+    <h1>Selector to get all items</h1>
+    <ng-container *ngrxLet="allStrapiPosts$; let allStrapiPosts">
+        <div *ngFor="let post of allStrapiPosts">
+            Title: {{ post.attributes?.title }}
+        </div>
+    </ng-container>
+
+    <h1>Selector to get parts of state</h1>
+    <ng-container *ngrxLet="allStrapiPostTitlesWithImages$; let titleImages">
+        <nx-ng-strapi-prototype-strapi-title-images
+            *ngFor="let item of titleImages"
+            [title]="item.title"
+            [images]="item.images"
+        ></nx-ng-strapi-prototype-strapi-title-images>
+    </ng-container>
 </div>

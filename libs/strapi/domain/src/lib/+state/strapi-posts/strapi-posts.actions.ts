@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 import { Update } from '@ngrx/entity';
-import { PostListResponseDataItem } from './model/postListResponseDataItem';
+import { PostListResponseDataItem } from './models-from-strapi/postListResponseDataItem';
 
 export const initStrapiEffect = createAction(
     '[PostListResponseDataItem/API] Init Strapi Effect'

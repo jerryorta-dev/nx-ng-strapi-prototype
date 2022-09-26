@@ -1,6 +1,6 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
-import { PostListResponseDataItem } from './model/postListResponseDataItem';
+import { PostListResponseDataItem } from './models-from-strapi/postListResponseDataItem';
 import * as StrapiPostsActions from './strapi-posts.actions';
 
 export const strapiPostsFeatureKey = 'strapiPosts';

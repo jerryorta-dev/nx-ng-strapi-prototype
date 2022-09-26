@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PostListResponse } from './model/postListResponse';
+import { PostListResponse } from './models-from-strapi/postListResponse';
 
 @Injectable({
     providedIn: 'root',

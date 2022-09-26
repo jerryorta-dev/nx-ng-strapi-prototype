@@ -1,4 +1,12 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import {
+    PostListResponseDataItem,
+    selectAllStrapiPosts,
+    selectAllStrapPostsTitlesWithCoverImages,
+    StrapiPostCoverWithImages,
+} from '@nx-ng-strapi-prototype/strapi/domain';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'nx-ng-strapi-prototype-root',
@@ -6,5 +14,13 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    // hello$ = this.http.get<Message>('/api/hello');
+    allStrapiPosts$: Observable<PostListResponseDataItem[]>;
+    allStrapiPostTitlesWithImages$: Observable<StrapiPostCoverWithImages[]>;
+
+    constructor(private store: Store) {
+        this.allStrapiPosts$ = this.store.select(selectAllStrapiPosts);
+        this.allStrapiPostTitlesWithImages$ = this.store.select(
+            selectAllStrapPostsTitlesWithCoverImages
+        );
+    }
 }
