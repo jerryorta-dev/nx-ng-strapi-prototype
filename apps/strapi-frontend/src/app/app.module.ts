@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { StrapiDomainModule } from '@nx-ng-strapi-prototype/strapi/domain';
 
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
@@ -22,6 +23,7 @@ import { EffectsModule } from '@ngrx/effects';
             logOnly: environment.production,
         }),
         EffectsModule.forRoot([]),
+        StrapiDomainModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
