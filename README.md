@@ -6,7 +6,16 @@ See Udemy Strapi Server Repo [here](https://github.com/jerryorta-dev/udemy-strap
 
 `ng serve` to start prototype in development mode.
 
-# Generate Strapi TypeScript files
+# NgRX Entity Store
+
+`libs/strapi/domain/src/lib/+state/strapi-posts`
+
+The model files where generated from Strapi Swagger Docs and are located at
+
+`libs/strapi/domain/src/lib/+state/strapi-posts/models-from-strapi`
+
+
+# Generate Strapi TypeScript Interface Files
 
 Swagger docs needs to be installed in Strapi:
 

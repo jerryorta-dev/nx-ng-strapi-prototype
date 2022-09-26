@@ -7,7 +7,6 @@
         "api-interfaces": "libs/api-interfaces",
         "strapi-domain": "libs/strapi/domain",
         "strapi-frontend": "apps/strapi-frontend",
-        "strapi-frontend-e2e": "apps/strapi-frontend-e2e",
-        "strapi-ui-strapi": "libs/strapi/ui-strapi"
+        "strapi-frontend-e2e": "apps/strapi-frontend-e2e"
     }
 }

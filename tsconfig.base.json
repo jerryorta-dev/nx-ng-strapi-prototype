@@ -21,9 +21,6 @@
             "@nx-ng-strapi-prototype/strapi/domain": [
                 "libs/strapi/domain/src/index.ts"
             ],
-            "@nx-ng-strapi-prototype/strapi/ui-strapi": [
-                "libs/strapi/ui-strapi/src/index.ts"
-            ],
             "@secrets": ["libs/any-shared/secrets/src/index.ts"]
         }
     },
