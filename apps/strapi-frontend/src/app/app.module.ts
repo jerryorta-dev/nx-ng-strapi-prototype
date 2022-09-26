@@ -11,9 +11,19 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
-  imports: [BrowserModule, HttpClientModule, BrowserAnimationsModule, StoreModule.forRoot({}, {}), StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }), EffectsModule.forRoot([])],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent, NxWelcomeComponent],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        StoreModule.forRoot({}, {}),
+        StoreDevtoolsModule.instrument({
+            maxAge: 25,
+            logOnly: environment.production,
+        }),
+        EffectsModule.forRoot([]),
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

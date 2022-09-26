@@ -1,3 +1,12 @@
 {
-  "singleQuote": true
+  "tabWidth": 4,
+  "formatOnSave": true,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "printWidth": 80,
+  "useTabs": false,
+  "semi": true,
+  "bracketSpacing": true,
+  "proseWrap": "never",
+  "arrowParens": "always"
 }
