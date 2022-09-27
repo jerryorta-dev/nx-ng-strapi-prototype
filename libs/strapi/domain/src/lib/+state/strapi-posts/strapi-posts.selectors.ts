@@ -38,3 +38,26 @@ export const selectAllStrapPostsTitlesWithCoverImages = createSelector(
                 }
         )
 );
+
+export const ImAParamSelector = (param: string) => {
+    return createSelector(
+        selectAllStrapiPosts,
+        (posts: PostListResponseDataItem[]): StrapiPostCoverWithImages[] =>
+            posts.map(
+                (post: PostListResponseDataItem) =>
+                    <StrapiPostCoverWithImages>{
+                        title: post?.attributes?.title
+                            ? post?.attributes?.title
+                            : '',
+                        images: post.attributes?.cover?.data
+                            ? post.attributes?.cover?.data.map(
+                                  (image: LayoutPageInfoComponentCoverData) =>
+                                      image?.attributes?.url
+                                          ? `http://localhost:1337${image.attributes.url}`
+                                          : ''
+                              )
+                            : [],
+                    }
+            )
+    );
+};

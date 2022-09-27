@@ -19,6 +19,8 @@ import { StrapiTitleImagesModule } from './strapi-title-images/strapi-title-imag
         HttpClientModule,
         StrapiTitleImagesModule,
         BrowserAnimationsModule,
+
+        // NGRX
         StoreModule.forRoot({}, {}),
         StoreDevtoolsModule.instrument({
             maxAge: 25,
@@ -26,6 +28,8 @@ import { StrapiTitleImagesModule } from './strapi-title-images/strapi-title-imag
         }),
         EffectsModule.forRoot([]),
         StrapiDomainModule,
+        // NGRX
+
         LetModule,
     ],
     providers: [],
