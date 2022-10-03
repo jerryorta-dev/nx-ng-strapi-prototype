@@ -15,16 +15,12 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
-            "@nx-ng-strapi-prototype/api-interfaces": [
-                "libs/api-interfaces/src/index.ts"
-            ],
             "@nx-ng-strapi-prototype/strapi/domain": [
                 "libs/strapi/domain/src/index.ts"
             ],
             "@nx-ng-strapi-prototype/strapi/ui-strapi": [
                 "libs/strapi/ui-strapi/src/index.ts"
-            ],
-            "@secrets": ["libs/any-shared/secrets/src/index.ts"]
+            ]
         }
     },
     "exclude": ["node_modules", "tmp"]
